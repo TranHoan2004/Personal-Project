@@ -12,7 +12,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.sql.SQLException;
 import model.Account;
 
 /**
@@ -90,6 +89,7 @@ public class LoginServlet extends HttpServlet {
             } else if (account.getRole() != role) {
                 ms += "Email is incorrect";
             } else if (account.getRole() == role && account.getPassword().equals(password)) {
+                request.setAttribute("user", account);
                 switch (role) {
                     case 1 -> {
                         response.sendRedirect("HomeForAdmin.jsp");
@@ -100,7 +100,7 @@ public class LoginServlet extends HttpServlet {
                         return;
                     }
                     case 3 -> {
-                        response.sendRedirect("HomeForCustomer.html");
+                        response.sendRedirect("HomeForCustomer.jsp");
                         return;
                     }
                 }

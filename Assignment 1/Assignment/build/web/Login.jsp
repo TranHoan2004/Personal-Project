@@ -11,22 +11,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Login V1</title>
-        <!--===============================================================================================-->	
         <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-        <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-        <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-        <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-        <!--===============================================================================================-->	
         <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-        <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-        <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href="css/util.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
-        <!--===============================================================================================-->
         <style>
             .modal {
                 display: none; /* Ẩn modal mặc định */
@@ -102,7 +94,7 @@
                                 <i class="fa fa-lock" aria-hidden="true"></i>
                             </span>
                         </div>
-                        
+
                         <div class="wrap-input100 validate-input role"> 
                             What is your role?
                             <select class="input100", name="role">
@@ -110,11 +102,8 @@
                                 <option value="2">Seller</option>
                                 <option value="3">Customer</option>                                
                             </select>
-<!--                                <i class="fi fi-ts-employee-man" ></i>
-                                <i class="fi fi-tr-boss"></i>
-                                <i class="fi fi-rr-shopping-cart-buyer"></i>-->
                         </div>
-                        
+
                         <div class="container-login100-form-btn">
                             <button class="login100-form-btn" name="login"> 
                                 Login
@@ -126,10 +115,10 @@
                                 if (!error.equals("")) {
                         %>
                         <p style="color: red" class="error"><em><%= error%></em></p>  
-                        <%
-                                }                               
-                            }
-                        %>
+                                <%
+                                        }                               
+                                    }
+                                %>
                         <div class="text-center p-t-12">
                             <span class="txt1">
                                 Forgot
@@ -179,9 +168,9 @@
                     String error = (String) request.getAttribute("error");
             %>
             <p style="color: red"><em><%=error%></em></p> 
-            <%
-                } else {
-            %>
+                    <%
+                        } else {
+                    %>
             <p style="color: green"><em>Successfully</em></p> 
             <%    
                 }
@@ -214,21 +203,16 @@
 
 
 
-        <!--===============================================================================================-->	
         <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-        <!--===============================================================================================-->
         <script src="vendor/bootstrap/js/popper.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-        <!--===============================================================================================-->
         <script src="vendor/select2/select2.min.js"></script>
-        <!--===============================================================================================-->
         <script src="vendor/tilt/tilt.jquery.min.js"></script>
         <script >
             $('.js-tilt').tilt({
                 scale: 1.1
             })
         </script>
-        <!--===============================================================================================-->
         <script src="js/main.js"></script>
 
     </body>

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Login
-    Created on : Aug 13, 2024, 11:11:51 AM
+    Document   : CreateNewAccount
+    Created on : Aug 16, 2024, 9:08:06 AM
     Author     : ADMIN
 --%>
 
@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Login V1</title>
+        <title>Sign in</title>
         <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
         <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -66,7 +66,6 @@
     </head>
     <body>
 
-
         <div class="limiter">
             <div class="container-login100">
                 <div class="wrap-login100">
@@ -74,107 +73,63 @@
                         <img src="images/img-01.png" alt="IMG">
                     </div>
 
-                    <form class="login100-form validate-form" action="login" method="post"> 
+                    <form class="login100-form validate-form" action="create" method="post"> 
                         <span class="login100-form-title">
-                            Login in here 
+                            Create A New Account
                         </span>
 
                         <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                            <input class="input100" type="text" name="email" placeholder="Email">
+                            <input class="input100" type="text" name="new_account_email" placeholder="Email">
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                             </span>
                         </div>
 
+                        <div class="wrap-input100 validate-input" data-validate = "Name is required">
+                            <input class="input100" type="text" name="new_account_name" placeholder="Name">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
                         <div class="wrap-input100 validate-input" data-validate = "Password is required">
-                            <input class="input100" type="password" name="password" placeholder="Password">
+                            <input class="input100" type="password" name="new_account_password" placeholder="Password">
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class="fa fa-lock" aria-hidden="true"></i>
                             </span>
                         </div>
 
-                        <div class="wrap-input100 validate-input role"> 
-                            What is your role?
-                            <select class="input100", name="role">
-                                <option value="1">Admin</option> 
-                                <option value="2">Seller</option>
-                                <option value="3">Customer</option>                                
-                            </select>
+                        <div class="wrap-input100 validate-input" data-validate = "Phone number is required">
+                            <input class="input100" type="text" name="new_account_phone_num" placeholder="Phone number">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                            </span>
                         </div>
 
                         <div class="container-login100-form-btn">
-                            <button class="login100-form-btn" name="login"> 
-                                Login
-                            </button>                            
+                            <button type="submit" class="login100-form-btn">Create account</button>                          
                         </div>
                         <%
                             if (request.getAttribute("error") != null) {
                                 String error = (String) request.getAttribute("error");
                                 if (!error.equals("")) {
                         %>
-                        <p style="color: red" class="error"><em><%= error%></em></p>  
+                        <p style="color: red"><em><%=error%></em></p> 
                                 <%
-                                        }                               
-                                    }
+                                    } else {
                                 %>
-                        <div class="text-center p-t-12">
-                            <span class="txt1">
-                                Forgot
-                            </span>
-                            <a class="txt2" href="Forgot.jsp" name="forgot">
-                                Username / Password? (Chưa xong)
-                            </a> <!
-                        </div>
-
-                        <div class="text-center p-t-136">
-                            <a id="loginBtn" class="txt2 " href="#">
-                                Create your Account
-                                <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-                            </a>
-                        </div>
+                        <p style="color: green"><em>Successfully</em></p> 
+                        <%    
+                                    }
+                            }
+                        %>                      
                     </form>
                 </div>
             </div>
-        </div>
-
-        <div id="loginModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2 class="text-center">Sign in with us :3</h2>
-                <form action="create" method="post">
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email" name="new_account_email">
-                    </div>
-                    <div class="form-group">
-                        <label for="text">Name</label>
-                        <input type="text" class="form-control" placeholder="Name" name="new_account_name">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password" name="new_account_password">
-                    </div>
-                    <div class="form-group">
-                        <label for="text">Phone number</label>
-                        <input type="text" class="form-control" placeholder="Phone number" name="new_account_phone_num">
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Create account</button>
-                </form>
-            </div>
-            <%
-                if (request.getAttribute("error") != null) {
-                    String error = (String) request.getAttribute("error");
-            %>
-            <p style="color: red"><em><%=error%></em></p> 
-                    <%
-                        } else {
-                    %>
-            <p style="color: green"><em>Successfully</em></p> 
-            <%    
-                }
-            %>
         </div>
 
         <script>
@@ -217,4 +172,3 @@
 
     </body>
 </html>
-
