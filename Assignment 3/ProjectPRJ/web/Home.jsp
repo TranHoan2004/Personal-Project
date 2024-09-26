@@ -29,7 +29,6 @@
 
                     <!--            Xử lý category-->
                 <jsp:include page="Left.jsp"></jsp:include> 
-
                     <div class="col-sm-9">
                         <div class="row">
                         <c:forEach items="${list}" var="o">
@@ -59,7 +58,6 @@
                                 <li class="page-item"><a href="home?page=${i}" class="page-link">${i}</a></li>                          
                                 </c:forEach>
                             <li class="page-item"><a href="home?page=${page+1>num?(num):(page+1)}" class="page-link">Kế tiếp</a></li>
-
                         </ul>
                     </div>
                 </div>
